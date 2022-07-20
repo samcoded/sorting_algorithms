@@ -1,11 +1,11 @@
 #include "sort.h"
-
+#include <stdio.h>
 
 /**
-* swapint - swaps index's of array
-* @l: left or low index to swap
-* @r: right or high index
-*/
+ * swapint - swaps index's of array
+ * @l: left or low index to swap
+ * @r: right or high index
+ */
 
 void swapint(int *l, int *r)
 {
@@ -17,13 +17,13 @@ void swapint(int *l, int *r)
 }
 
 /**
-* b_merge - bitonic merge
-* @array: Array slice being merged
-* @low: lowest index
-* @count: Count of slice
-* @dir: Direction, ascending 1 descending 0
-* @size: size of total array for printing
-*/
+ * b_merge - bitonic merge
+ * @array: Array slice being merged
+ * @low: lowest index
+ * @count: Count of slice
+ * @dir: Direction, ascending 1 descending 0
+ * @size: size of total array for printing
+ */
 
 void b_merge(int *array, int low, int count, int dir, size_t size)
 {
@@ -35,7 +35,7 @@ void b_merge(int *array, int low, int count, int dir, size_t size)
 		for (i = low; i < low + n; i++)
 		{
 			if (((array[i] > array[i + n]) && dir == 1) ||
-			(dir == 0 && (array[i] < array[i + n])))
+				(dir == 0 && (array[i] < array[i + n])))
 				swapint(&array[i], &array[i + n]);
 		}
 		b_merge(array, low, n, dir, size);
@@ -44,13 +44,13 @@ void b_merge(int *array, int low, int count, int dir, size_t size)
 }
 
 /**
-* b_sort - bitonic recursive sort
-* @array: array to sort
-* @low: lowest index
-* @count: Count of slice
-* @dir: Direction, ascending 1 descending 0
-* @size: size of total array for printing
-*/
+ * b_sort - bitonic recursive sort
+ * @array: array to sort
+ * @low: lowest index
+ * @count: Count of slice
+ * @dir: Direction, ascending 1 descending 0
+ * @size: size of total array for printing
+ */
 
 void b_sort(int *array, int low, int count, int dir, size_t size)
 {
@@ -78,10 +78,10 @@ void b_sort(int *array, int low, int count, int dir, size_t size)
 }
 
 /**
-* bitonic_sort - Sorts array using bitonic algo
-* @array: Array to sort
-* @size: Size of array
-*/
+ * bitonic_sort - Sorts array using bitonic algo
+ * @array: Array to sort
+ * @size: Size of array
+ */
 
 void bitonic_sort(int *array, size_t size)
 {
